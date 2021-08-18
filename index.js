@@ -1,4 +1,3 @@
-const { json } = require("express");
 const express = require("express")
 
 const apiVersion1 = require("./src/config/versioning/v1");
