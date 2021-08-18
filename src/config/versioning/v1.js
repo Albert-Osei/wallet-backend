@@ -2,10 +2,10 @@ const express = require("express");
 const api = express.Router();
 
 
-api.get("/", (res,req) => 
+api.get("/", (req, res) => 
     res.status(200).json({
         status: 'success',
-        message: 'Welcome to the Wallet system'
+        message: 'Welcome to the Wallet system',
     })
 );
 
