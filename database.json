@@ -1,0 +1,12 @@
+{
+    "dev": {
+        "ENV": "DEV_DATABASE_URL"
+    },
+    "test": {
+        "ENV": "TEST_DATABASE_URL"
+    },
+    "prod": {
+        "ENV": "PROD_DATABASE_URL"
+    },
+    "sql-file": true
+}
