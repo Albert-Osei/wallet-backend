@@ -1,5 +1,6 @@
 const express = require("express");
 const api = express.Router();
+const users = require("../../routes/user");
 
 
 api.get("/", (req, res) => 
@@ -9,6 +10,6 @@ api.get("/", (req, res) =>
     })
 );
 
-
+api.use("/users", users);
 
 module.exports = api;
