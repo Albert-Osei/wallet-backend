@@ -2,7 +2,14 @@
  * find user by email 
  */
 const findUserByEmail = `
-SELECT id, first_name, last_name, password, email, created_at FROM users WHERE email=$1
+SELECT id, first_name, last_name, email, password, created_at FROM users WHERE email=$1
+`;
+
+/**
+ * find user by id
+ */
+const findUserById = `
+SELECT id, first_name, last_name, email, password, created_at FROM users WHERE id=$1 
 `;
 
 /**
@@ -36,4 +43,5 @@ module.exports = {
     findUserByEmail,
     addUser,
     getAllUsersQuery,
+    findUserById,
 }

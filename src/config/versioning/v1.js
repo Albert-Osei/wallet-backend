@@ -13,5 +13,3 @@ api.get("/", (req, res) =>
 api.use("/users", users);
 
 module.exports = api;
-
-//heiene

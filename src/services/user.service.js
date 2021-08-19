@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const config = require("../config/env/index");
 const { runQuery } = require("../config/database.config");
-const { findUserByEmail, addUser, getAllUsersQuery } = require("../queries/users");
+const { findUserByEmail, addUser, getAllUsersQuery, findUserById } = require("../queries/users");
 
 const findUser = async (email) => {
     const user = await runQuery(findUserByEmail, [email]);
@@ -15,6 +15,24 @@ const getExistingUsers = async () => {
         message: "Users fetched successfully",
         code: 200,
         data: users
+    };
+};
+
+const getSingleUser = async (id) => {
+    const user = await runQuery(findUserById, [id]);
+    if (user.length === 0) {
+        throw {
+            status: "error",
+            message: "User not found",
+            code: 400,
+            data: null
+        }
+    }
+    return {
+        status: "success",
+        message: "User returned successfully",
+        code: 200,
+        data: user
     };
 };
 
@@ -48,4 +66,5 @@ module.exports = {
     findUser,
     getExistingUsers,
     createUser,
+    getSingleUser,
 }

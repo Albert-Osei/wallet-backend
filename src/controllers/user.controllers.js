@@ -20,7 +20,19 @@ const getallUsers = async (req, res, next) => {
     }
 }
 
+//Get single user function
+const getsingleUser = async (req, res, next) => {
+    const { id } = req.params;
+    try {
+        const response = await UserService.getSingleUser(id);
+        return res.status(response.code).json(response);
+    } catch (error) {
+        next(error);
+    }
+}
+
 module.exports = {
     createUser,
     getallUsers,
+    getsingleUser,
 }
