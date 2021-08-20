@@ -75,7 +75,7 @@ const loginUser = async (body) => {
         };
     }
 
-    const { password: dbPassword, first_name, last_name, id } = user[0];
+    const { password: dbPassword, id } = user[0];
     const userPassword = bcrypt.compareSync(password, dbPassword); // checks if true
     if (!userPassword) {
         throw {
@@ -93,8 +93,6 @@ const loginUser = async (body) => {
     const token = jwt.sign(
         {
             id,
-            first_name,
-            last_name,
             email,
         },
         config.JWT_SECRET_KEY,
@@ -107,8 +105,6 @@ const loginUser = async (body) => {
         data: {
             user: {
                 id,
-                first_name,
-                last_name,
                 email,
             },
             token,
