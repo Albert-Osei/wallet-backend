@@ -13,6 +13,14 @@ const validateUserSignup = (req, res, next) => {
     baseValidatorForBody(schema, req, res, next);
 };
 
+const validateUserLogin = (req, res, next) => {
+    const schema = Joi.object({
+        email: Joi.string().email().required(),
+        password: Joi.string().required()
+    });
+    baseValidatorForBody(schema, req, res, next);
+}
+
 const validateId = (req, res, next) => {
     const schema = Joi.object({
         id: Joi.number().required(),
@@ -23,5 +31,6 @@ const validateId = (req, res, next) => {
 module.exports = {
     validateId,
     validateUserSignup,
+    validateUserLogin,
 }
 
