@@ -1,6 +1,6 @@
 /* Replace with your SQL commands */
 CREATE TABLE "users" (
-    "id" SERIAL PRIMARY KEY,
+    "id" uuid DEFAULT uuid_generate_v4 (),
     "first_name" varchar(100),
     "last_name" varchar(100),
     "email" varchar(100) UNIQUE,
@@ -9,3 +9,6 @@ CREATE TABLE "users" (
     "created_at" timestamptz DEFAULT NOW(),
     "updated_at" timestamptz DEFAULT NOW()
 );
+-- ALTER TABLE "users" ADD CONSTRAINT fk_user UNIQUE("id")
+
+
