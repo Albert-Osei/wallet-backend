@@ -1,8 +1,4 @@
 /* Replace with your SQL commands */
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-SELECT uuid_generate_v4();
-
-
 CREATE TABLE "user_pin" (
     "id" SERIAL PRIMARY KEY,
     -- "user_id" uuid DEFAULT uuid_generate_v4 (),

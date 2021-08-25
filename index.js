@@ -19,3 +19,5 @@ app.use("/api/v1", apiVersion1);
 app.use(appErrorHandler);
 app.use(genericErrorHandler);
 app.use(notFound);
+
+module.exports = app;
