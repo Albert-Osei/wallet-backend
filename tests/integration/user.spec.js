@@ -1,7 +1,6 @@
 const { expect } = require("chai");
 const request = require("supertest");
 const app = require("../../index");
-// const { loginUser } = require("../../src/services/user.service");
 
 describe('User APIs', async () => {
     describe('Signup user - 400 codes', () => {
