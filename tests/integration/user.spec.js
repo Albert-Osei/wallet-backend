@@ -101,7 +101,7 @@ describe('User APIs', async () => {
                 .set('Accept', 'application/json')
                 .end((err, res) => {
                     expect(res.statusCode).to.be.equal(200);
-                    expect(res.boody.status).to.be.equal('success');
+                    expect(res.body.status).to.be.equal('success');
                     expect(res.body.message).to.be.equal('Users fetched successfully');
                     expect(res.body.code).to.be.equal(200);
                     expect(res.body.data).to.be.an('array');
