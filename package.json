@@ -7,7 +7,7 @@
     "pretest": "npm run migrate-test:down && npm run migrate-test:up",
     "posttest": "npm run migrate-test:down",
     "test": "cross-env NODE_ENV=test nyc --reporter lcov --reporter text mocha --exist --recursive --timeout=150000 tests/**/*.js",
-    "dev": "nodemon index.js",
+    "start": "nodemon index.js",
     "migrate:up": "db-migrate up --config database.json -e dev",
     "migrate:down": "db-migrate down -c 2000 --config database.json -e dev",
     "migrate-test:up": "db-migrate up --config database.json -e test",
